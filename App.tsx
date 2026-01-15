@@ -30,7 +30,7 @@ function App() {
               <div className="max-w-7xl mx-auto px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-8 md:gap-24 items-center">
                   <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-tr from-[#FF8E3C] to-[#D9376E] rounded-[5rem] rotate-3 scale-105 opacity-5"></div>
+                    
                     <img 
                       src="https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=1000&auto=format&fit=crop" 
                       className="rounded-[3rem] md:rounded-[4rem] relative z-10 shadow-2xl w-full aspect-square object-cover border-8 border-white"
@@ -102,7 +102,7 @@ function App() {
             
             {/* Energy Quote - Tightened mobile padding */}
             <section className="py-10 md:py-24 bg-orange-50/50 relative overflow-hidden">
-              <div className="blob-bg w-[500px] h-[500px] bg-[#FF8E3C] top-[-50%] left-[-20%] opacity-10"></div>
+              
               <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
                 <h4 className="text-2xl md:text-7xl font-black text-[#0D0D2B] italic leading-tight mb-6 md:mb-12">
                   "To give <span className="text-[#FF8E3C]">light</span> is to find light within."
