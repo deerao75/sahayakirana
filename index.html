@@ -23,13 +23,14 @@
     :root {
       --primary: #FF8E3C;
       --secondary: #0D0D2B;
-      --warm-bg: #FFFBF7;
+      --warm-bg: #FFFFFF;
     }
     body {
       font-family: 'Bricolage Grotesque', sans-serif;
       background-color: var(--warm-bg);
       color: var(--secondary);
       overflow-x: hidden;
+      background-image: none !important;
     }
     h1, h2, h3, .font-heading {
       font-family: 'Bricolage Grotesque', sans-serif;
@@ -55,8 +56,14 @@
       filter: blur(80px);
       opacity: 0.4;
       border-radius: 50%;
+      display: none !important;
     }
-    
+
+    /* Force-remove any glow/gradient background overlays */
+    html, body, #root {
+      background-color: #FFFFFF !important;
+      background-image: none !important;
+    }
   </style>
 
   <!-- ✅ Remove importmap for Vite builds.
