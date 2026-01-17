@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -8,10 +7,13 @@ import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 import ProjectsPage from './components/ProjectsPage';
 
+// ✅ IMPORT THE IMAGE HERE
+// (Make sure the image is in the same folder as this App.tsx file)
+import communityImg from './community.jpg'; 
+
 function App() {
   const [currentPage, setCurrentPage] = useState<'home' | 'projects'>('home');
 
-  // Scroll to top whenever page changes
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [currentPage]);
@@ -25,17 +27,18 @@ function App() {
           <>
             <Hero />
             
-            {/* Why Us Section - Tightened mobile padding */}
             <section className="py-8 md:py-20 relative overflow-hidden bg-white">
               <div className="max-w-7xl mx-auto px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-8 md:gap-24 items-center">
                   <div className="relative">
                     
+                    {/* ✅ USE THE IMPORTED IMAGE VARIABLE HERE */}
                     <img 
-                      src="https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=1000&auto=format&fit=crop" 
-                      className="rounded-[3rem] md:rounded-[4rem] relative z-10 shadow-2xl w-full aspect-square object-cover border-8 border-white"
-                      alt="Community Support"
+                      src={communityImg} 
+                      className="rounded-[3rem] md:rounded-[4rem] relative z-10 shadow-2xl w-full aspect-square object-cover border-8 border-white bg-gray-200"
+                      alt="Sahaya Kirana Community"
                     />
+
                     <div className="absolute -bottom-6 -right-4 md:-bottom-8 md:-right-8 bg-white p-5 md:p-8 rounded-[2rem] md:rounded-[2.5rem] shadow-2xl z-20 max-w-[200px] md:max-w-xs border-4 border-[#FFFBF7] flex items-center gap-2 md:gap-3">
                       <span className="text-xl md:text-2xl text-[#FF8E3C]">✨</span>
                       <p className="text-[10px] md:text-base font-bold text-[#0D0D2B] leading-tight">Every ray of support reaches a soul in need.</p>
@@ -76,7 +79,6 @@ function App() {
               </div>
             </section>
 
-            {/* Core Values Block - Tightened mobile padding */}
             <section className="py-6 md:py-16 bg-[#FFFBF7]">
               <div className="max-w-6xl mx-auto px-6 lg:px-8">
                 <div className="bg-orange-100/40 rounded-[2.5rem] md:rounded-[3rem] p-6 md:p-12 border border-orange-200/50 flex flex-col md:flex-row items-center gap-6 md:gap-8">
@@ -100,9 +102,7 @@ function App() {
 
             <ServiceSection />
             
-            {/* Energy Quote - Tightened mobile padding */}
             <section className="py-10 md:py-24 bg-orange-50/50 relative overflow-hidden">
-              
               <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
                 <h4 className="text-2xl md:text-7xl font-black text-[#0D0D2B] italic leading-tight mb-6 md:mb-12">
                   "To give <span className="text-[#FF8E3C]">light</span> is to find light within."

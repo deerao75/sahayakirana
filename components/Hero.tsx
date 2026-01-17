@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const Hero: React.FC = () => {
@@ -48,33 +47,36 @@ const Hero: React.FC = () => {
           {/* Collage Style Images */}
           <div className="relative z-10 grid grid-cols-12 gap-4">
             <div className="col-span-8">
+              {/* IMAGE 1: Indian Village Elder (Turban/Beard) */}
               <img 
-                src="https://images.unsplash.com/photo-1593113630400-ea4288922497?q=80&w=1000&auto=format&fit=crop" 
-                className="w-full h-80 object-cover rounded-[3rem] shadow-2xl border-8 border-white"
-                alt="Kindness"
+                src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?q=80&w=800&auto=format&fit=crop" 
+                className="w-full h-80 object-cover rounded-[3rem] shadow-2xl border-8 border-white bg-gray-100"
+                alt="Dignified Indian Elder"
               />
             </div>
             <div className="col-span-4 self-end">
               <div className="w-full aspect-square bg-transparent rounded-[2rem] flex items-center justify-center border-4 border-[#FF8E3C]/30 mb-4 shadow-sm group">
-                {/* SVG Sun with Rays */}
                 <svg viewBox="0 0 100 100" className="w-4/5 h-4/5 text-[#FF8E3C] animate-[spin_10s_linear_infinite]">
                   <circle cx="50" cy="50" r="18" fill="currentColor" />
+                  {/* eslint-disable-next-line */}
                   {[0, 45, 90, 135, 180, 225, 270, 315].map(deg => (
                     <rect key={deg} x="47" y="5" width="6" height="22" rx="3" fill="currentColor" transform={`rotate(${deg} 50 50)`} />
                   ))}
                 </svg>
               </div>
+              {/* IMAGE 2: Indian Village Children */}
               <img 
-                src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=600&auto=format&fit=crop" 
-                className="w-full h-40 object-cover rounded-[2rem] shadow-xl border-4 border-white"
-                alt="Smiles"
+                src="https://images.unsplash.com/photo-1489710437720-ebb67ec84dd2?q=80&w=600&auto=format&fit=crop" 
+                className="w-full h-40 object-cover rounded-[2rem] shadow-xl border-4 border-white bg-gray-100"
+                alt="Smiling Indian Children"
               />
             </div>
             <div className="col-span-4 mt-[-4rem]">
+              {/* IMAGE 3: Indian Village Woman */}
               <img 
-                src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?q=80&w=600&auto=format&fit=crop" 
-                className="w-full h-64 object-cover rounded-[2rem] shadow-xl border-4 border-white"
-                alt="Hands"
+                src="https://images.unsplash.com/photo-1457449940276-e8deed18bfff?q=80&w=600&auto=format&fit=crop" 
+                className="w-full h-64 object-cover rounded-[2rem] shadow-xl border-4 border-white bg-gray-100"
+                alt="Indian Woman in Village"
               />
             </div>
             <div className="col-span-8 mt-[-2rem]">
