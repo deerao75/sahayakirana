@@ -6,8 +6,9 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
 
   return {
-    // ✅ IMPORTANT for GitHub Pages project sites
-    base: '/sahayakirana/',
+    // ✅ CHANGED: Set to '/' for custom domains (like sahayakirana.org)
+    // This fixes the "double folder" path issue on your server.
+    base: '/',
 
     server: {
       port: 3000,

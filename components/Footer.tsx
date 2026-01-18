@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
                     </span>
                     {/* 'whitespace-nowrap' forces one line. 'text-[9px]' ensures it fits. */}
                     <span className="text-[#0D0D2B] font-bold text-[9px] font-mono whitespace-nowrap">
-                      No :CIT(E)BLR/80G/ N-337A/ AACTV0580G /ITO(E)-2/Vol 2016-2017
+                      No:CIT(E)BLR/80G/N-337A/AACTV0580G/ITO(E)-2/Vol 2016-2017
                     </span>
                   </div>
 
@@ -135,11 +135,11 @@ const Footer: React.FC = () => {
                     </div>
                     <div>
                         <p className="text-[10px] uppercase font-bold tracking-widest text-slate-400 mb-1">Branch</p>
-                        <p className="text-[#0D0D2B] font-bold">M G Road, Bangalore</p>
+                        <p className="text-[#0D0D2B] font-bold">BSK 3rd Stage, Bangalore</p>
                     </div>
                 </div>
-                <div><p className="text-[10px] uppercase font-bold tracking-widest text-slate-400 mb-1">Account Number</p><p className="text-[#0D0D2B] font-black text-xl font-mono tracking-wide">309001234567</p></div>
-                <div><p className="text-[10px] uppercase font-bold tracking-widest text-slate-400 mb-1">IFSC Code</p><p className="text-[#0D0D2B] font-black font-mono">ICIC0001234</p></div>
+                <div><p className="text-[10px] uppercase font-bold tracking-widest text-slate-400 mb-1">Account Number</p><p className="text-[#0D0D2B] font-black text-xl font-mono tracking-wide">100905000933</p></div>
+                <div><p className="text-[10px] uppercase font-bold tracking-widest text-slate-400 mb-1">IFSC Code</p><p className="text-[#0D0D2B] font-black font-mono">ICIC0001009</p></div>
             </div>
             <p className="text-center text-[10px] text-slate-400 mt-6 font-medium">Please share the transaction screenshot to our WhatsApp for the receipt.</p>
           </div>

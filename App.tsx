@@ -7,9 +7,8 @@ import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 import ProjectsPage from './components/ProjectsPage';
 
-// ✅ IMPORT THE IMAGE HERE
-// (Make sure the image is in the same folder as this App.tsx file)
-import communityImg from './community.jpg'; 
+// ❌ REMOVED: import communityImg from './community.jpg'; 
+// (We do not need to import images when they are in the 'public' folder)
 
 function App() {
   const [currentPage, setCurrentPage] = useState<'home' | 'projects'>('home');
@@ -32,9 +31,9 @@ function App() {
                 <div className="grid lg:grid-cols-2 gap-8 md:gap-24 items-center">
                   <div className="relative">
                     
-                    {/* ✅ USE THE IMPORTED IMAGE VARIABLE HERE */}
+                    {/* ✅ CHANGED: Direct path to the image in the public folder */}
                     <img 
-                      src={communityImg} 
+                      src="/community.jpg" 
                       className="rounded-[3rem] md:rounded-[4rem] relative z-10 shadow-2xl w-full aspect-square object-cover border-8 border-white bg-gray-200"
                       alt="Sahaya Kirana Community"
                     />
