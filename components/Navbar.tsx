@@ -138,16 +138,16 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
                     </div>
                     <div>
                         <p className="text-[10px] uppercase font-bold tracking-widest text-slate-400 mb-1">Branch</p>
-                        <p className="text-[#0D0D2B] font-bold">M G Road, Bangalore</p>
+                        <p className="text-[#0D0D2B] font-bold">BSK 3rd Stage, Bangalore</p>
                     </div>
                 </div>
                 <div>
                     <p className="text-[10px] uppercase font-bold tracking-widest text-slate-400 mb-1">Account Number</p>
-                    <p className="text-[#0D0D2B] font-black text-xl font-mono tracking-wide">309001234567</p>
+                    <p className="text-[#0D0D2B] font-black text-xl font-mono tracking-wide">100905000933</p>
                 </div>
                 <div>
                     <p className="text-[10px] uppercase font-bold tracking-widest text-slate-400 mb-1">IFSC Code</p>
-                    <p className="text-[#0D0D2B] font-black font-mono">ICIC0001234</p>
+                    <p className="text-[#0D0D2B] font-black font-mono">ICIC0001009</p>
                 </div>
             </div>
 
