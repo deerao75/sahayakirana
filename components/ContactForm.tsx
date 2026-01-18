@@ -19,27 +19,32 @@ const ContactForm: React.FC = () => {
         {/* Centered Contact Info Cards */}
         <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             
-          {/* Call Us Card */}
+          {/* Visit Us Card (Replaces Call Feature) */}
           <div className="bg-blue-50 p-8 rounded-[2rem] border border-blue-100 flex flex-col items-center text-center gap-4 group hover:bg-white hover:shadow-xl hover:shadow-blue-100 transition-all duration-500">
             <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center text-4xl shadow-sm border border-blue-100 group-hover:rotate-6 transition-transform">
-              📱
+              📍
             </div>
             <div>
-              <h4 className="text-xl font-black text-[#0D0D2B] mb-2 uppercase tracking-tight">Call Us</h4>
-              <p className="text-slate-600 font-bold text-lg">+91 98765 43210</p>
+              <h4 className="text-xl font-black text-[#0D0D2B] mb-2 uppercase tracking-tight">Our Location</h4>
+              <p className="text-slate-600 font-bold text-lg">Bengaluru, Karnataka, India</p>
             </div>
           </div>
 
-          {/* Email Us Card */}
-          <div className="bg-rose-50 p-8 rounded-[2rem] border border-rose-100 flex flex-col items-center text-center gap-4 group hover:bg-white hover:shadow-xl hover:shadow-rose-100 transition-all duration-500">
+          {/* Email Us Card (Clickable) */}
+          <a 
+            href="mailto:support@sahayakirana.org"
+            className="bg-rose-50 p-8 rounded-[2rem] border border-rose-100 flex flex-col items-center text-center gap-4 group hover:bg-white hover:shadow-xl hover:shadow-rose-100 transition-all duration-500 cursor-pointer"
+          >
             <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center text-4xl shadow-sm border border-rose-100 group-hover:rotate-6 transition-transform">
               ✉️
             </div>
             <div>
               <h4 className="text-xl font-black text-[#0D0D2B] mb-2 uppercase tracking-tight">Email Us</h4>
-              <p className="text-slate-600 font-bold text-lg">support@sahayakirana.org</p>
+              <p className="text-slate-600 font-bold text-lg group-hover:text-rose-600 transition-colors">
+                support@sahayakirana.org
+              </p>
             </div>
-          </div>
+          </a>
 
         </div>
       </div>

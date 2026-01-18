@@ -37,14 +37,26 @@ const Footer: React.FC = () => {
                 <div className="h-px bg-slate-200 w-full mb-4"></div>
                 
                 <div className="space-y-2">
-                    <div className="flex justify-between items-center bg-gray-50 p-2 rounded-lg border border-slate-200">
-                        <span className="text-[10px] uppercase font-bold tracking-widest text-slate-400">80G Reg. No</span>
-                        <span className="text-[#0D0D2B] font-bold text-xs font-mono">AACTS1234EF123</span>
-                    </div>
-                    <div className="flex justify-between items-center bg-gray-50 p-2 rounded-lg border border-slate-200">
-                        <span className="text-[10px] uppercase font-bold tracking-widest text-slate-400">CSR 1 Reg. No</span>
-                        <span className="text-[#0D0D2B] font-bold text-xs font-mono">CSR00012345</span>
-                    </div>
+                  {/* 80G Section: Centered Heading, Single Line Number */}
+                  <div className="flex flex-col items-center justify-center bg-gray-50 p-2 rounded-lg border border-slate-200 text-center">
+                    <span className="text-[10px] uppercase font-bold tracking-widest text-slate-400 mb-1">
+                      80G Reg. No
+                    </span>
+                    {/* 'whitespace-nowrap' forces one line. 'text-[9px]' ensures it fits. */}
+                    <span className="text-[#0D0D2B] font-bold text-[9px] font-mono whitespace-nowrap">
+                      No :CIT(E)BLR/80G/ N-337A/ AACTV0580G /ITO(E)-2/Vol 2016-2017
+                    </span>
+                  </div>
+
+                  {/* CSR 1 Section */}
+                  <div className="flex justify-between items-center bg-gray-50 p-2 rounded-lg border border-slate-200">
+                    <span className="text-[10px] uppercase font-bold tracking-widest text-slate-400">
+                      CSR 1 Reg. No
+                    </span>
+                    <span className="text-[#0D0D2B] font-bold text-xs font-mono">
+                      To be procured
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>

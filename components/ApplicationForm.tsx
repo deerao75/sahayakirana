@@ -1,10 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { SERVICES } from '../constants';
-// Ensure you have this type defined in your types file
 import { ApplicationFormData } from '../types';
+// ✅ Import EmailJS
+import emailjs from '@emailjs/browser';
 
 const ApplicationForm: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); // To show "Sending..." state
+  
+  // ✅ Create a reference to the HTML form
+  const form = useRef<HTMLFormElement>(null);
+
   const [formData, setFormData] = useState<ApplicationFormData>({
     fullName: '',
     email: '',
@@ -15,20 +21,28 @@ const ApplicationForm: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
 
-    // 1. Construct the email content
-    const subject = `Application Request from ${formData.fullName}`;
-    const body = `Name: ${formData.fullName}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone}%0D%0ACategory: ${formData.category}%0D%0A%0D%0AStory/Description:%0D%0A${formData.description}`;
-    
-    // 2. Open the user's email client
-    // (This causes the "Select App" popup you are seeing - this is normal behavior)
-    window.location.href = `mailto:support@sahayakirana.org?subject=${subject}&body=${body}`;
-
-    // 3. Show success message immediately (No timer)
-    setIsSubmitted(true);
+    // ✅ SEND EMAIL VIA EMAILJS (Silent Send)
+    emailjs.sendForm(
+      'service_0k63bmr',      // ✅ Your actual Gmail Service ID
+      'template_ufb3uax',     // ⚠️ REPLACE THIS: Copy "Template ID" from EmailJS "Email Templates" tab
+      form.current!,
+      '0Nlk5zqlwrz-zsf43'       // ⚠️ REPLACE THIS: Copy "Public Key" from EmailJS "Account" page
+    )
+    .then((result) => {
+        // Success
+        console.log("Email sent:", result.text);
+        setIsLoading(false);
+        setIsSubmitted(true);
+    }, (error) => {
+        // Error
+        console.error("Email failed:", error.text);
+        setIsLoading(false);
+        alert("Failed to send message. Please check your internet connection and try again.");
+    });
   };
 
-  // This function runs when the user clicks "OK"
   const handleReturnToMain = () => {
     setIsSubmitted(false);
     setFormData({ fullName: '', email: '', phone: '', category: '', description: '' });
@@ -85,7 +99,7 @@ const ApplicationForm: React.FC = () => {
                 </div>
                 <h3 className="text-2xl md:text-4xl font-black text-[#0D0D2B] mb-4 tracking-tight">Application Generated</h3>
                 <p className="text-slate-600 text-base md:text-xl font-medium mb-8 max-w-md">
-                  We have opened your default email app with your application details. Please click <strong>"Send"</strong> in your email app to complete the process.
+                   We have received your details. A team member will reach out to you shortly.
                 </p>
                 <button 
                   onClick={handleReturnToMain}
@@ -95,7 +109,8 @@ const ApplicationForm: React.FC = () => {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6 md:space-y-10">
+              // ✅ FORM CONNECTED TO REF
+              <form ref={form} onSubmit={handleSubmit} className="space-y-6 md:space-y-10">
                 
                 {/* ROW 1: Name & Email */}
                 <div className="grid md:grid-cols-2 gap-4 md:gap-8">
@@ -103,7 +118,7 @@ const ApplicationForm: React.FC = () => {
                     <label className="text-[10px] md:text-xs font-black text-[#0D0D2B] uppercase tracking-widest ml-1">Your Full Name</label>
                     <input 
                       required name="fullName" value={formData.fullName} onChange={handleChange}
-                      type="text" placeholder="e.g. Keethi Hegde"
+                      type="text" placeholder="e.g. Keerthi Hegde"
                       className="w-full px-6 py-4 bg-slate-50 border-2 border-transparent focus:border-[#FF8E3C] focus:bg-white rounded-[1.5rem] md:rounded-[2rem] outline-none transition-all font-bold text-sm md:text-lg"
                     />
                   </div>
@@ -111,7 +126,7 @@ const ApplicationForm: React.FC = () => {
                     <label className="text-[10px] md:text-xs font-black text-[#0D0D2B] uppercase tracking-widest ml-1">Your Email</label>
                     <input 
                       required name="email" value={formData.email} onChange={handleChange}
-                      type="email" placeholder="e.g. keerti.hegde@example.com"
+                      type="email" placeholder="e.g. keerthi.hegde@example.com"
                       className="w-full px-6 py-4 bg-slate-50 border-2 border-transparent focus:border-[#FF8E3C] focus:bg-white rounded-[1.5rem] md:rounded-[2rem] outline-none transition-all font-bold text-sm md:text-lg"
                     />
                   </div>
@@ -151,9 +166,10 @@ const ApplicationForm: React.FC = () => {
 
                 <button 
                   type="submit"
-                  className="w-full bg-[#0D0D2B] text-white py-4 md:py-6 rounded-[1.5rem] md:rounded-[2rem] font-black text-base md:text-xl hover:bg-[#FF8E3C] transition-all shadow-2xl active:scale-[0.98]"
+                  disabled={isLoading}
+                  className="w-full bg-[#0D0D2B] text-white py-4 md:py-6 rounded-[1.5rem] md:rounded-[2rem] font-black text-base md:text-xl hover:bg-[#FF8E3C] transition-all shadow-2xl active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send Support Request
+                  {isLoading ? "Sending..." : "Send Support Request"}
                 </button>
               </form>
             )}

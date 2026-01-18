@@ -6,12 +6,12 @@ export const SERVICES: Service[] = [
     id: 'old-age-care',
     title: 'Beloved Elders',
     icon: '🌸',
-    description: 'Nurturing our senior family members with healthcare, comfort, and deep companionship.',
+    description: 'Nurturing our senior family members with healthcare, comfort, deep companionship through monetary support or otherwise .',
     details: [
       'Warm and loving day-care homes for senior citizens.',
       'Specialized geriatric healthcare and nutritional planning.',
-      'Memory sharing circles and social recreational sessions.',
-      'Dedicated nursing care for the abandoned and lonely.',
+      'Social interaction and recreational activities.',
+      'Nursing care support for the abandoned and lonely.',
       'Emotional counseling and legal support for dignity in old age.'
     ]
   },
@@ -30,14 +30,14 @@ export const SERVICES: Service[] = [
   },
   {
     id: 'education',
-    title: 'Glow Minds',
+    title: 'Glowing Minds',
     icon: '✏️',
     description: 'Igniting the sparks of curiosity in children through holistic learning support.',
     details: [
       'Interactive after-school learning centers in rural clusters.',
       'Distribution of educational kits, uniforms, and digital tablets.',
       'Special education support for children with learning disabilities.',
-      'Vibrant community libraries and storytelling hours.',
+      'Educational resources and community liabrary access.',
       'Merit-based scholarships for technical and higher education.'
     ]
   },
@@ -47,9 +47,9 @@ export const SERVICES: Service[] = [
     icon: '☀️',
     description: 'Ensuring health is a right, not a privilege, through community-wide wellness programs.',
     details: [
-      'Mobile wellness units providing doorstep medical care.',
+      'Community medical outreach and on-site care.',
       'Maternal health and infant nutrition intervention.',
-      'Daily "Happy Meals" program for eradicating hunger.',
+      'Need-based food assistance and nutritional support.',
       'Sanitation drives and clean drinking water access.',
       'Emergency surgery support and medicine distribution.'
     ]
